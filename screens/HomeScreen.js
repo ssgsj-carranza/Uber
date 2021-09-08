@@ -1,13 +1,13 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 
 const HomeScreen = () => {
     return (
-        <View>
+        <SafeAreaView>
             <Text>Home Screen</Text>
-        </View>
-    )
-}
+        </SafeAreaView>
+    );
+};
 
 export default HomeScreen
 
