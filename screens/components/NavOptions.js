@@ -1,13 +1,34 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { FlatList, Text, TouchableOpacity, View } from 'react-native'
+
+const data = [
+    {
+        id: '123',
+        title: 'Get a ride',
+        image: 'https://links.papareact.com/3pn',
+        screen: 'MapScreen',
+    },
+    {
+        id: '456',
+        title: 'Order Food',
+        image: 'https://links.papareact.com/28w',
+        screen: 'EatScreen', //FUTURE ADD ON
+    },
+];
 
 const NavOptions = () => {
     return (
-        <View>
-            <Text>Options</Text>
-        </View>
-    )
-}
+        <FlatList 
+            data={data}
+            horizontal
+            renderItem={({item}) => (
+                <TouchableOpacity>
+                    <Text>{item.title}</Text>
+                </TouchableOpacity>
+            )}
+        />
+    );
+};
 
 export default NavOptions
 
