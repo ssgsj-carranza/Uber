@@ -41,3 +41,7 @@ const NavOptions = () => {
 export default NavOptions
 
 
+//npm install
+//npm install tailwind-react-native-classnames
+//npm install react-native-elements
+//npm install react-native-vector-icons
