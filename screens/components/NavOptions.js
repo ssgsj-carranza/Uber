@@ -62,3 +62,4 @@ export default NavOptions
 //expo install react-native-gesture-handler react-native-reanimated react-native-screens @react-native-community/masked-view
 //npm install @react-navigation/stack
 //npm install react-native-google-places-autocomplete --save
+//npm install react-native-dotenv
