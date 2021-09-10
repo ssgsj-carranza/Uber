@@ -7,6 +7,7 @@ import { store } from './store';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import MapScreen from './screens/MapScreen';
 //SET UP REDUX
 
 export default function App() {
@@ -19,6 +20,16 @@ export default function App() {
           <Stack.Screen 
             name='HomeScreen'
             component={HomeScreen}
+            options={{
+              headerShown:false,
+            }}
+          />
+          <Stack.Screen 
+            name='MapScreen'
+            component={MapScreen}
+            options={{
+              headerShown:false,
+            }}
           />
           </Stack.Navigator>
       </NavigationContainer>
