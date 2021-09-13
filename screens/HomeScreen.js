@@ -21,6 +21,18 @@ const HomeScreen = () => {
                     }}
                 />
                 <GooglePlacesAutocomplete
+                    styles={{
+                        container: {
+                            flex: 0,
+                        },
+                        textInput: {
+                            fontSize: 18,
+                        },
+                    }}
+                    query={{
+                        key: GOOGLE_MAPS_KEY,
+                        language: 'en'
+                    }}
                     placeholder="Where from?" 
                     nearbyPlacesAPI='GooglePlacesSearch'
                     debounce={400} //Begins search after user stops typing for 400mmsec

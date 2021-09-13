@@ -58,8 +58,9 @@ export default NavOptions
 //npm install react-native-elements
 //npm install react-native-vector-icons
 //npm install react-native-safe-area-context (uninstalled)
-//npm install react-navigation/native
+//npm install @react-navigation/native
 //expo install react-native-gesture-handler react-native-reanimated react-native-screens @react-native-community/masked-view
 //npm install @react-navigation/stack
 //npm install react-native-google-places-autocomplete --save
 //npm install react-native-dotenv
+//Ran npm dedupe to remove duplicate packages
