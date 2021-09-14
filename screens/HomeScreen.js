@@ -7,6 +7,8 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import {GOOGLE_MAPS_KEY} from '@env';
 
 const HomeScreen = () => {
+    
+
     return (
         <SafeAreaView style={tw`bg-white h-full`}>
             <View style={tw`p-5`}>
@@ -29,6 +31,13 @@ const HomeScreen = () => {
                             fontSize: 18,
                         },
                     }}
+                    minLength={2}
+                    enablePoweredByContainer={false}
+                    onPress={(data, details = null) => {
+
+                    }}
+                    fetchDetails={true}
+                    returnKeyType={'search'}
                     query={{
                         key: GOOGLE_MAPS_KEY,
                         language: 'en'
