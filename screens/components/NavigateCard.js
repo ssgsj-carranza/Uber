@@ -30,6 +30,13 @@ const NavigateCard = () => {
                         placeholder='Where to?'
                         nearbyPlacesAPI='GooglePlacesSearch'
                         debounce={400}
+                        fetchDetails={true}
+                        enablePoweredByContainer={false}
+                        query={{
+                            key: GOOGLE_MAPS_KEY,
+                            language: 'en',
+                        }}
+                        returnKeyType={'search'}
                     />
                 </View>
             </View>
