@@ -69,3 +69,4 @@ export default NavOptions
 //npm install react-native-dotenv
 //Ran npm dedupe to remove duplicate packages
 // npm install react-native-maps
+// npm install react-native-maps-directions
