@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
 import tw from 'tailwind-react-native-classnames';
 import {Icon} from 'react-native-elements';
@@ -19,7 +19,7 @@ const data = [
     },
     {
         id: 'Uber-LUX-789',
-        title: 'Flying Nimbus cloud',
+        title: 'Flying Nimbus',
         multiplier: 1.75,
         image: 'https://i.redd.it/8kvyrz0t1q651.jpg',
     },
@@ -27,6 +27,7 @@ const data = [
 
 const RideOptionsCard = () => {
     const navigation = useNavigation();
+    const [selected, setSelected] = useState(null);
 
     return (
         <SafeAreaView style={tw`bg-white flex-grow`}>
@@ -43,7 +44,7 @@ const RideOptionsCard = () => {
                 data={data}
                 keyExtractor={(item) => item.id}
                 renderItem={({item: {id, title, multiplier, image}}) => (
-                    <TouchableOpacity style={tw`flex-row items-center justify-between`}>
+                    <TouchableOpacity onPress={() => setSelected(item)} style={tw`flex-row items-center justify-between px-10 ${id === selected?.id && 'bg-gray-200'}`}>
                         <Image 
                             style={{
                                 width: 100,
@@ -52,10 +53,11 @@ const RideOptionsCard = () => {
                             }}
                             source={{ uri: image }}
                         />
-                        <View>
-                            <Text>{title}</Text>
+                        <View style={tw`-ml-6`}>
+                            <Text style={tw`text-xl font-semibold`}>{title}</Text>
                             <Text>Travel time...</Text>
                         </View>
+                        <Text style={tw`text-xl`}>$99</Text>
                     </TouchableOpacity>
                 )}
             />
