@@ -5,6 +5,9 @@ import {Icon} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import {selectTravelTimeInformation} from '../slices/navSlice';
+import 'intl';
+import 'intl/locale-data/jsonp/en';
+import { FormattedNumber, IntlProvider } from 'react-intl';
 
 const data = [
     {
@@ -26,6 +29,9 @@ const data = [
         image: 'https://i.redd.it/8kvyrz0t1q651.jpg',
     },
 ];
+
+//This goes up if we have surge times
+const SURGE_CHARGE_RATE = 1.5;
 
 const RideOptionsCard = () => {
     const navigation = useNavigation();
@@ -60,7 +66,16 @@ const RideOptionsCard = () => {
                             <Text style={tw`text-xl font-semibold`}>{title}</Text>
                             <Text>{travelTimeInformation?.duration.text} Travel Time</Text>
                         </View>
-                        <Text style={tw`text-xl`}>$99</Text>
+                        <Text style={tw`text-xl`}>
+                            <IntlProvider locale='en'>
+                            <FormattedNumber
+                                style= 'currency'
+                                currency= 'USD'
+                                value={(travelTimeInformation?.duration.value * SURGE_CHARGE_RATE * multiplier) / 100}
+                            
+                            />
+                            </IntlProvider>
+                        </Text>
                     </TouchableOpacity>
                 )}
             />

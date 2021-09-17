@@ -70,3 +70,5 @@ export default NavOptions
 //Ran npm dedupe to remove duplicate packages
 // npm install react-native-maps
 // npm install react-native-maps-directions
+// npm install intl
+// npm i -S react-intl (maybe)
