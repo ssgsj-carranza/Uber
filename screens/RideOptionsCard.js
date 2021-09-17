@@ -47,7 +47,7 @@ const RideOptionsCard = () => {
                         type='fontawesome'
                     />
                 </TouchableOpacity>
-                <Text style={tw`text-center py-5 text-xl`}>Select a Ride - {travelTimeInformation?.distance.text}</Text>
+                <Text style={tw`text-center py-5 text-xl`}>Select a Ride - {travelTimeInformation?.distance?.text}</Text>
             </View>
             <FlatList 
                 data={data}
@@ -64,7 +64,7 @@ const RideOptionsCard = () => {
                         />
                         <View style={tw`-ml-6`}>
                             <Text style={tw`text-xl font-semibold`}>{title}</Text>
-                            <Text>{travelTimeInformation?.duration.text} Travel Time</Text>
+                            <Text>{travelTimeInformation?.duration?.text} Travel Time</Text>
                         </View>
                         <Text style={tw`text-xl`}>
                             <IntlProvider locale='en'>
