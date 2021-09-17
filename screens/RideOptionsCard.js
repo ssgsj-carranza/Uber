@@ -61,6 +61,11 @@ const RideOptionsCard = () => {
                     </TouchableOpacity>
                 )}
             />
+            <View>
+                <TouchableOpacity style={tw`bg-black -mt-3`}>
+                    <Text style={tw`text-center text-white text-xl`}>Choose {selected?.title}</Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     )
 }
